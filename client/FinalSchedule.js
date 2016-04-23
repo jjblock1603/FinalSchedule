@@ -1,61 +1,72 @@
   Template.classes.events({
-     'submit .DayofWeekForm'(event) {
+     'submit .DayofWeekandClassTime'(event) {
     // Prevent default browser form submit
        event.preventDefault();
 
         const form = event.target;
+        const classTime = form.ClassTimeForm.value;
+
        if (form.Monday.checked)
          {
-        const formTextValue = form.Monday.value;
-         console.log("This is " + formTextValue)
+        const submittedClassDate = form.Monday.value;
+         console.log("This is " + submittedClassDate)
+         ClassScheduleCollection.insert({ClassDate: submittedClassDate, createdAt: new Date ()  });
+
         }
 
        if (form.Tuesday.checked)
          {
-        const formTextValue = form.Tuesday.value;
-         console.log("This is " + formTextValue)
+           const submittedClassDate = form.Tuesday.value;
+           console.log("This is " + submittedClassDate)
+           ClassScheduleCollection.insert({ClassDate: submittedClassDate, createdAt: new Date ()  });
         }
        if (form.Wednesday.checked)
          {
-        const formTextValue = form.Wednesday.value;
-         console.log("This is " + formTextValue)
+          const submittedClassDate = form.Wednesday.value;
+           console.log("This is " + submittedClassDate)
+           ClassScheduleCollection.insert({ClassDate: submittedClassDate, createdAt: new Date ()  });
         }
 
        if (form.Thursday.checked)
          {
-        const formTextValue = form.Thursday.value;
-         console.log("This is " + formTextValue)
+          const submittedClassDate = form.Thursday.value;
+           console.log("This is " + submittedClassDate)
+           ClassScheduleCollection.insert({ClassDate: submittedClassDate, createdAt: new Date ()  });
         }
 
        if (form.Friday.checked)
          {
-        const formTextValue = form.Friday.value;
-         console.log("This is " + formTextValue)
+          const submittedClassDate = form.Friday.value;
+          console.log("This is " + submittedClassDate)
+          ClassScheduleCollection.insert({ClassDate: submittedClassDate, createdAt: new Date ()  });
         }
 
        if (form.SatSun.checked)
          {
-        const formTextValue = form.SatSun.value;
-         console.log("This is " + formTextValue)
+          const submittedClassDate = form.SatSun.value;
+         console.log("This is " + submittedClassDate)
+         ClassScheduleCollection.insert({ClassDate: submittedClassDate, createdAt: new Date () });
         }
 
-
-     },
-
-
-
-    'submit .ClassTimeForm'(event) {
-         event.preventDefault();
-
-       const target = event.target;
-       const classTime = target.ClassTimeForm.value;
-
       TimeScheduleCollection.insert({
-      submittedTime: classTime,
+      submittedTime: classTime });
+     }
+  }
+     )
 
-    })
+ // var finalsDictionary=  {
 
-    },
+  // FinalsScheduleDictionary: function() {
+  //  FinalScheduleCollection.insert({
+   //   ExamGroupNumber: examGroup,
+  //    ExamDay: examDay,
+  //    ExamTime: examTime
 
+  //  }
+  //  )
 
-});
+  //   console.log ("Test Time");
+  //   return FinalScheduleCollection.find();}}
+
+ //Template.finals.helpers(finalsDictionary)
+
